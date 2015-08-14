@@ -53,4 +53,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'landings#index'
+  resources :posts, only:[:new,:create, :show, :edit, :update, :destroy]
 end

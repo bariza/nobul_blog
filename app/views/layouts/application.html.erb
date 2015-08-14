@@ -7,7 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if signed_in? %>
+      Signed in as: <%= current_user.email %><br><br>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %> <br><br>
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path %><br><br>
+<% end %>
 
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+	</div>
 <%= yield %>
 
 </body>

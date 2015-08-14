@@ -1,0 +1,11 @@
+<div>
+	<%= form_for @post do |f| %>
+		Post Title: <%= f.text_field :title %><br><br>
+		Post description: <%= f.text_field :description %><br><br>
+		Post SEO name: <%= f.text_field :seo_name %><br><br>
+		Post body: <%= f.text_area :post_body %><br><br>
+	<%= f.submit %>
+
+	<% end %>
+
+</div>
